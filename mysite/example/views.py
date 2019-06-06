@@ -9,7 +9,7 @@ from .models import *
 def example_get(request, var_a, var_b):
 	try:
 		returnob = {
-		"data": "%s: %s" %(var_a, var_b),
+		"dis what u want?": "hi %s: %s" %(var_a, var_b), "n":"o"
 		}
 		return JsonResponse(returnob)
 	except Exception as e:
@@ -33,4 +33,4 @@ def example_post(request):
 			errorType = str(exc_type)
 			return JsonResponse({"isError": True, "error":str(e), "errorType":errorType, "function":fname, "line":exc_tb.tb_lineno, "log":log})
 	else:
-		return HttpResponse("ONLY POST REQUESTS")
+		return HttpResponse("<h1>ONLY POST REQUESTS</h1>")
