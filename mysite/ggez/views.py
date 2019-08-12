@@ -5,7 +5,10 @@ import json
 from .models import *
 import os,sys
 import requests
-
+import time
+from imageai.Prediction import ImagePrediction
+import requests
+import urllib.request
 
 # Create your views here.
 
@@ -103,7 +106,9 @@ def fib(request):
 			return JsonResponse({"isError": True, "error":str(e), "errorType":errorType, "function":fname, "line":exc_tb.tb_lineno, "log":log})
 	else:
 		return JsonResponse(jsob)
-		
+
+
+
 @csrf_exempt
 def image(request):
 	log = []
